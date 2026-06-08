@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import { storyblok } from '@storyblok/astro';
+import vercel from '@astrojs/vercel';
 
 export default defineConfig({
   integrations: [
@@ -24,6 +25,7 @@ export default defineConfig({
       },
     }),
   ],
+  adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],
   },
