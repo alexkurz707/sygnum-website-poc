@@ -1,6 +1,12 @@
 ---
 import { storyblokEditable } from '@storyblok/astro';
 const { blok } = Astro.props;
+
+function resolveLink(link: any): string {
+  if (!link) return '#';
+  if (typeof link === 'string') return link;
+  return link.cached_url || link.url || '#';
+}
 ---
 
 <section
@@ -35,7 +41,7 @@ const { blok } = Astro.props;
     <!-- Button — right, same row -->
     {blok.button_text && blok.button_link && (
       <a
-        href={blok.button_link}
+        href={resolveLink(blok.button_link)}
         class="btn-coral"
         style="flex-shrink: 0; padding: 0.75rem 2rem; font-size: 0.84rem;"
       >

@@ -2,6 +2,14 @@
 import { storyblokEditable } from '@storyblok/astro';
 const { blok } = Astro.props;
 const bgImage = blok.background_image?.filename;
+
+function resolveLink(link: any): string {
+  if (!link) return '#';
+  if (typeof link === 'string') return link;
+  return link.cached_url || link.url || '#';
+}
+
+const buttonHref = resolveLink(blok.button_link);
 ---
 
 <section
@@ -49,7 +57,7 @@ const bgImage = blok.background_image?.filename;
 
       <div style="display:flex; align-items:center; gap:0.875rem; flex-wrap:wrap;">
         {blok.button_text && blok.button_link && (
-          <a href={blok.button_link} class="btn-coral">{blok.button_text}</a>
+          <a href={buttonHref} class="btn-coral">{blok.button_text}</a>
         )}
         <a href="#contact" class="btn-outline-coral" style="display:inline-flex;align-items:center;gap:0.35rem;">
           Contact us
