@@ -1,0 +1,24 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+const { blok } = Astro.props;
+---
+
+<div {...storyblokEditable(blok)}>
+  <p style="font-size: 0.75rem; font-weight: 500; color: white; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 1rem 0;">
+    {blok.heading}
+  </p>
+  <ul style="list-style: none; padding: 0; margin: 0;">
+    {blok.links?.map((link: any) => (
+      <li style="margin-bottom: 0.5rem;">
+        <a
+          href={link.url ?? link.href ?? '#'}
+          style="font-size: 0.8125rem; color: rgba(255,255,255,0.58); text-decoration: none; transition: color 0.15s; display: block;"
+          onmouseenter="this.style.color='rgba(255,255,255,0.9)'"
+          onmouseleave="this.style.color='rgba(255,255,255,0.58)'"
+        >
+          {link.label ?? link.name ?? link.text}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

@@ -1,0 +1,14 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+const { blok } = Astro.props;
+---
+
+<a
+  {...storyblokEditable(blok)}
+  href={blok.url}
+  style="color: #2e2c3a; font-size: 0.8125rem; letter-spacing: 0.02em; text-decoration: none; transition: color 0.15s; white-space: nowrap; padding: 0.25rem 0;"
+  onmouseenter="this.style.color='#F04E68'"
+  onmouseleave="this.style.color='#2e2c3a'"
+>
+  {blok.label}
+</a>

@@ -1,0 +1,39 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+const { blok } = Astro.props;
+---
+
+<footer
+  {...storyblokEditable(blok)}
+  style="background-color: #2d2b38; color: white; padding: 3.5rem 1.75rem 0;"
+>
+  <div style="max-width: 1320px; margin: 0 auto;">
+
+    <!-- Logo + CTA top bar -->
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" fill="#F04E68"/><path d="M8 9.5C8 8.12 9.12 7 10.5 7H15v2h-4.5a.5.5 0 000 1H14c1.38 0 2.5 1.12 2.5 2.5S15.38 15 14 15H9v-2h5a.5.5 0 000-1h-3.5C9.12 12 8 10.88 8 9.5z" fill="white"/></svg>
+        <span style="font-size: 0.9375rem; letter-spacing: 0.18em; font-weight: 500; color: white; text-transform: uppercase;">Sygnum</span>
+      </div>
+      <a href="#" class="btn-coral">Become a client</a>
+    </div>
+
+    <!-- Columns from Storyblok -->
+    {blok.columns?.length > 0 && (
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
+        {blok.columns.map((col: any) => (
+          <StoryblokComponent blok={col} />
+        ))}
+      </div>
+    )}
+
+    <!-- Copyright bottom bar -->
+    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding: 1.75rem 0;">
+      <p style="font-size: 0.75rem; color: rgba(255,255,255,0.32); margin: 0;">
+        {blok.copyright_text}
+      </p>
+    </div>
+
+  </div>
+</footer>

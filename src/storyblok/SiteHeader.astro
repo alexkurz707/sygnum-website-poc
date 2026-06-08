@@ -1,0 +1,38 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+const { blok } = Astro.props;
+const logo = blok.logo?.filename;
+---
+
+<header
+  {...storyblokEditable(blok)}
+  style="background: white; border-bottom: 1px solid #e8e7ed; position: sticky; top: 0; z-index: 100;"
+>
+  <div style="max-width: 1320px; margin: 0 auto; padding: 0 1.75rem; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
+
+    <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;">
+      {logo
+        ? <img src={logo} alt="Sygnum" style="height: 28px; object-fit: contain;" />
+        : (
+          <>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" fill="#F04E68"/><path d="M8 9.5C8 8.12 9.12 7 10.5 7H15v2h-4.5a.5.5 0 000 1H14c1.38 0 2.5 1.12 2.5 2.5S15.38 15 14 15H9v-2h5a.5.5 0 000-1h-3.5C9.12 12 8 10.88 8 9.5z" fill="white"/></svg>
+            <span style="font-size: 1rem; letter-spacing: 0.18em; font-weight: 500; color: #2e2c3a; text-transform: uppercase;">Sygnum</span>
+          </>
+        )
+      }
+    </a>
+
+    <nav style="display: flex; align-items: center; gap: 0.75rem; flex: 1; justify-content: center; flex-wrap: wrap;">
+      {blok.nav_links?.map((link: any) => (
+        <StoryblokComponent blok={link} />
+      ))}
+    </nav>
+
+    <div style="display: flex; gap: 0.625rem; flex-shrink: 0;">
+      <a href="#" class="btn-coral">Become a client</a>
+      <a href="#" class="btn-outline-coral">Client login</a>
+    </div>
+
+  </div>
+</header>

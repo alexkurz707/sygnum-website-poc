@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Calibri Light', Calibri, 'Trebuchet MS', Arial, sans-serif;
+  color: #1a1a2e;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Section spacing ── */
+section + section { /* extra breathing room between sections handled per-component */ }
+
+/* ── Shared button classes (used in Storyblok components) ── */
+.btn-coral {
+  display: inline-block;
+  background-color: #F04E68;
+  color: #fff;
+  border: 1px solid #F04E68;
+  padding: 0.65rem 1.5rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, transform 0.15s;
+  font-family: 'Calibri Light', Calibri, Arial, sans-serif;
+}
+.btn-coral:hover { background-color: #d93d56; border-color: #d93d56; transform: scale(1.03); }
+
+.btn-outline-coral {
+  display: inline-block;
+  background-color: transparent;
+  color: #F04E68;
+  border: 1px solid #F04E68;
+  padding: 0.65rem 1.5rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, transform 0.15s;
+  font-family: 'Calibri Light', Calibri, Arial, sans-serif;
+}
+.btn-outline-coral:hover { background-color: #F04E68; color: #fff; transform: scale(1.03); }
+
+/* ── Learn-more link ── */
+.learn-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #F04E68;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: gap 0.15s;
+}
+.learn-more-link:hover { gap: 0.55rem; }

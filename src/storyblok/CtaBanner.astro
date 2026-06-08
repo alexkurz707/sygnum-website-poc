@@ -1,0 +1,47 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+const { blok } = Astro.props;
+---
+
+<section
+  id="contact"
+  {...storyblokEditable(blok)}
+  style="background-color: #535060; padding: 5rem 2rem;"
+>
+  <div style="
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  ">
+
+    <!-- Heading — left -->
+    <h2 style="
+      font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+      font-weight: 300;
+      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin: 0;
+      max-width: 560px;
+      font-family: 'Calibri Light', Calibri, Arial, sans-serif;
+    ">
+      {blok.heading}
+    </h2>
+
+    <!-- Button — right, same row -->
+    {blok.button_text && blok.button_link && (
+      <a
+        href={blok.button_link}
+        class="btn-coral"
+        style="flex-shrink: 0; padding: 0.75rem 2rem; font-size: 0.84rem;"
+      >
+        {blok.button_text}
+      </a>
+    )}
+
+  </div>
+</section>

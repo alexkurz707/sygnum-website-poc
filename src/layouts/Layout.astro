@@ -1,0 +1,245 @@
+---
+import '../styles/global.css';
+interface Props { title?: string }
+const { title = 'Sygnum | Regulated Digital Asset Banking' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title}</title>
+  <style>
+    .nav-link {
+      color: #3a3848;
+      font-size: 0.78rem;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      padding: 0.25rem 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      transition: color 0.15s;
+    }
+    .nav-link:hover { color: #F04E68; }
+    .nav-chevron { font-size: 0.55rem; opacity: 0.5; }
+
+    /* header buttons */
+    .hbtn-coral {
+      background: #F04E68;
+      color: #fff;
+      border: 1px solid #F04E68;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s, border-color 0.15s, transform 0.15s;
+    }
+    .hbtn-coral:hover { background: #d93d56; border-color: #d93d56; transform: scale(1.03); }
+
+    .hbtn-outline {
+      background: transparent;
+      color: #F04E68;
+      border: 1px solid #F04E68;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s, transform 0.15s;
+    }
+    .hbtn-outline:hover { background: #F04E68; color: #fff; transform: scale(1.03); }
+
+    .hbtn-outline-white {
+      background: transparent;
+      color: #3a3848;
+      border: 1px solid #d0cedd;
+      padding: 0.5rem 1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: border-color 0.15s, color 0.15s, transform 0.15s;
+    }
+    .hbtn-outline-white:hover { color: #1a1a2e; border-color: #a09db8; transform: scale(1.03); }
+
+    /* footer */
+    .fcol-heading {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      margin: 0 0 1rem 0;
+    }
+    .flink {
+      display: block;
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.52);
+      text-decoration: none;
+      margin-bottom: 0.55rem;
+      transition: color 0.15s;
+    }
+    .flink:hover { color: rgba(255,255,255,0.9); }
+  </style>
+</head>
+<body style="margin:0; font-family: 'Calibri Light', Calibri, 'Trebuchet MS', Arial, sans-serif;">
+
+  <!-- ═══ HEADER — dark navy ═══ -->
+  <header style="
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #e6e4ee;
+  ">
+    <div style="
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    ">
+
+      <!-- Logo — far left -->
+      <a href="/" style="text-decoration:none; display:flex; align-items:center; gap:0.5rem; flex-shrink:0;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" fill="#F04E68"/>
+          <path d="M8 9.5C8 8.12 9.12 7 10.5 7H15v2h-4.5a.5.5 0 000 1H14c1.38 0 2.5 1.12 2.5 2.5S15.38 15 14 15H9v-2h5a.5.5 0 000-1h-3.5C9.12 12 8 10.88 8 9.5z" fill="white"/>
+        </svg>
+        <span style="color:#2e2c3a; font-size:0.9375rem; letter-spacing:0.2em; font-weight:400; text-transform:uppercase; font-family:'Calibri Light',Calibri,Arial,sans-serif;">
+          Sygnum
+        </span>
+      </a>
+
+      <!-- Nav links — flex middle -->
+      <nav style="display:flex; align-items:center; gap:1.5rem; flex:1; justify-content:center; flex-wrap:wrap;">
+        <a class="nav-link" href="#hero">Private clients <span class="nav-chevron">▾</span></a>
+        <a class="nav-link" href="#hero">Institutions <span class="nav-chevron">▾</span></a>
+        <a class="nav-link" href="#hero">Banks <span class="nav-chevron">▾</span></a>
+        <a class="nav-link" href="#offering">Digital asset offering <span class="nav-chevron">▾</span></a>
+        <a class="nav-link" href="#offering">Investment solutions <span class="nav-chevron">▾</span></a>
+        <a class="nav-link" href="/about">About</a>
+        <a class="nav-link" href="#contact">News and research <span class="nav-chevron">▾</span></a>
+      </nav>
+
+      <!-- Right buttons -->
+      <div style="display:flex; align-items:center; gap:0.5rem; flex-shrink:0;">
+        <a href="#contact" class="hbtn-coral">Become a client</a>
+        <a href="#" class="hbtn-outline">Client login</a>
+        <a href="#" class="hbtn-outline-white">Sygnum Bank <span class="nav-chevron">▾</span></a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ═══ PAGE CONTENT ═══ -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- ═══ FOOTER — dark, two sections ═══ -->
+  <footer style="background-color: #1a1a2e;">
+
+    <!-- Section 1: Logo + CTA -->
+    <div style="
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 2.25rem 2rem;
+    ">
+      <div style="max-width:1320px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;">
+        <a href="/" style="text-decoration:none; display:flex; align-items:center; gap:0.5rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" fill="#F04E68"/>
+            <path d="M8 9.5C8 8.12 9.12 7 10.5 7H15v2h-4.5a.5.5 0 000 1H14c1.38 0 2.5 1.12 2.5 2.5S15.38 15 14 15H9v-2h5a.5.5 0 000-1h-3.5C9.12 12 8 10.88 8 9.5z" fill="white"/>
+          </svg>
+          <span style="color:#fff; font-size:0.875rem; letter-spacing:0.2em; font-weight:400; text-transform:uppercase; font-family:'Calibri Light',Calibri,Arial,sans-serif;">Sygnum</span>
+        </a>
+        <a href="#contact" class="hbtn-coral">Become a client</a>
+      </div>
+    </div>
+
+    <!-- Section 2: 5-column link grid -->
+    <div style="padding: 3.5rem 2rem 0;">
+      <div style="max-width:1320px; margin:0 auto;">
+        <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:2rem; margin-bottom:3rem;">
+
+          <div>
+            <p class="fcol-heading">Offering</p>
+            <a class="flink" href="#">Digital asset banking</a>
+            <a class="flink" href="#">Accounts &amp; Custody</a>
+            <a class="flink" href="#">Trading</a>
+            <a class="flink" href="#">Staking</a>
+            <a class="flink" href="#">Lending</a>
+            <a class="flink" href="#">Tokenization</a>
+            <a class="flink" href="#">B2B Banking</a>
+            <a class="flink" href="#">Sygnum Connect</a>
+            <a class="flink" href="#">Sygnum Protect</a>
+          </div>
+
+          <div>
+            <p class="fcol-heading">About</p>
+            <a class="flink" href="#">Our story</a>
+            <a class="flink" href="#">Team</a>
+            <a class="flink" href="#">Advisory Council</a>
+            <a class="flink" href="#">Careers</a>
+            <a class="flink" href="#">Partners</a>
+            <a class="flink" href="#">Media</a>
+          </div>
+
+          <div>
+            <p class="fcol-heading">Contact</p>
+            <a class="flink" href="#">Contact us</a>
+            <a class="flink" href="#">Zurich office</a>
+            <a class="flink" href="#">Singapore office</a>
+            <a class="flink" href="#">Abu Dhabi office</a>
+            <a class="flink" href="#">Investor relations</a>
+          </div>
+
+          <div>
+            <p class="fcol-heading">Learn</p>
+            <a class="flink" href="#">Future Finance</a>
+            <a class="flink" href="#">Research</a>
+            <a class="flink" href="#">Videos</a>
+            <a class="flink" href="#">Webinars</a>
+            <a class="flink" href="#">FAQ</a>
+            <a class="flink" href="#">Help Center</a>
+          </div>
+
+          <div>
+            <p class="fcol-heading">Legal</p>
+            <a class="flink" href="#">Privacy Policy</a>
+            <a class="flink" href="#">Terms of Use</a>
+            <a class="flink" href="#">Imprint</a>
+            <a class="flink" href="#">Regulatory</a>
+            <a class="flink" href="#">Risk Disclosure</a>
+            <a class="flink" href="#">Cookie Policy</a>
+          </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div style="border-top:1px solid rgba(255,255,255,0.07); padding:1.5rem 0;">
+          <p style="font-size:0.72rem; color:rgba(255,255,255,0.28); margin:0; letter-spacing:0.02em;">
+            Sygnum Bank AG is regulated by FINMA. © {new Date().getFullYear()} Sygnum. All rights reserved.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>

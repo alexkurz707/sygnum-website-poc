@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About | Sygnum">
+
+  <!-- Hero -->
+  <section style="background-color: #ffffff; border-bottom: 1px solid #eeedf3; padding: 5.5rem 2rem;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <h1 style="
+        font-size: clamp(2rem, 3.2vw, 3rem);
+        font-weight: 300;
+        color: #1a1a2e;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin: 0 0 1.5rem 0;
+        font-family: 'Calibri Light', Calibri, Arial, sans-serif;
+      ">
+        Building the future of digital asset banking
+      </h1>
+      <p style="
+        font-size: 1.0625rem;
+        color: #555567;
+        line-height: 1.75;
+        max-width: 680px;
+        margin: 0;
+        font-weight: 300;
+        font-family: 'Calibri Light', Calibri, Arial, sans-serif;
+      ">
+        Sygnum is the world's first regulated digital asset bank, founded on the belief that digital assets
+        deserve the same institutional-grade infrastructure as traditional financial instruments.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our story -->
+  <section style="background-color: #ffffff; padding: 5rem 2rem;">
+    <div style="max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
+
+      <div>
+        <h2 style="
+          font-size: clamp(1.4rem, 2.2vw, 2rem);
+          font-weight: 300;
+          color: #1a1a2e;
+          letter-spacing: -0.01em;
+          margin: 0 0 1.5rem 0;
+          font-family: 'Calibri Light', Calibri, Arial, sans-serif;
+        ">Our story</h2>
+        <p style="font-size: 0.9375rem; color: #555567; line-height: 1.75; margin: 0 0 1.25rem 0; font-weight: 300; font-family: 'Calibri Light', Calibri, Arial, sans-serif;">
+          Founded in 2017 in Zurich, Switzerland, Sygnum was created by a team of experienced bankers,
+          technologists, and blockchain pioneers. Our founding vision was simple: to bridge the gap
+          between traditional finance and the digital asset ecosystem.
+        </p>
+        <p style="font-size: 0.9375rem; color: #555567; line-height: 1.75; margin: 0; font-weight: 300; font-family: 'Calibri Light', Calibri, Arial, sans-serif;">
+          In 2019, we became the world's first bank to receive a banking and securities dealer licence
+          from FINMA — Switzerland's financial market supervisory authority — for a digital asset-native
+          institution. Since then, we have expanded to Singapore, Abu Dhabi, and beyond.
+        </p>
+      </div>
+
+      <div>
+        <h2 style="
+          font-size: clamp(1.4rem, 2.2vw, 2rem);
+          font-weight: 300;
+          color: #1a1a2e;
+          letter-spacing: -0.01em;
+          margin: 0 0 1.5rem 0;
+          font-family: 'Calibri Light', Calibri, Arial, sans-serif;
+        ">Our mission</h2>
+        <p style="font-size: 0.9375rem; color: #555567; line-height: 1.75; margin: 0 0 1.25rem 0; font-weight: 300; font-family: 'Calibri Light', Calibri, Arial, sans-serif;">
+          We exist to make the digital asset economy accessible to everyone — from individual private
+          clients to global institutions. We combine deep regulatory expertise with cutting-edge
+          technology to offer banking services that meet the highest standards of security and compliance.
+        </p>
+        <p style="font-size: 0.9375rem; color: #555567; line-height: 1.75; margin: 0; font-weight: 300; font-family: 'Calibri Light', Calibri, Arial, sans-serif;">
+          Our platform provides custody, trading, staking, lending, and tokenization services — all
+          under one roof, with the full protection of a regulated banking licence.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section style="background-color: #f8f7fc; padding: 5rem 2rem; border-top: 1px solid #eeedf3;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <h2 style="
+        font-size: clamp(1.4rem, 2.2vw, 2rem);
+        font-weight: 300;
+        color: #1a1a2e;
+        letter-spacing: -0.01em;
+        margin: 0 0 3rem 0;
+        font-family: 'Calibri Light', Calibri, Arial, sans-serif;
+      ">What we stand for</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
+
+        {[
+          { title: 'Trust', body: 'Regulated by FINMA, we uphold the highest standards of transparency, security, and client protection in every product and service we offer.' },
+          { title: 'Innovation', body: 'We invest continuously in technology to stay at the forefront of digital asset infrastructure, enabling our clients to access new opportunities first.' },
+          { title: 'Expertise', body: 'Our team combines decades of traditional banking experience with deep native knowledge of blockchain technology and digital markets.' },
+          { title: 'Accessibility', body: 'We believe institutional-grade digital asset services should be available to anyone ready to participate in the future of finance.' },
+        ].map(({ title, body }) => (
+          <div style="
+            background: #ffffff;
+            border: 1px solid #e4e2ec;
+            padding: 2rem;
+            transition: border-color 0.15s;
+          "
+          onmouseenter="this.style.borderColor='#F04E68'"
+          onmouseleave="this.style.borderColor='#e4e2ec'"
+          >
+            <div style="
+              width: 36px; height: 36px;
+              background: #F04E68;
+              display: flex; align-items: center; justify-content: center;
+              margin-bottom: 1rem;
+              font-size: 1.1rem; color: #fff; font-weight: 400;
+            ">+</div>
+            <h3 style="font-size: 1rem; font-weight: 400; color: #1a1a2e; margin: 0 0 0.75rem 0; font-family: 'Calibri Light', Calibri, Arial, sans-serif;">{title}</h3>
+            <p style="font-size: 0.84rem; color: #6b6a7a; line-height: 1.7; margin: 0; font-weight: 300; font-family: 'Calibri Light', Calibri, Arial, sans-serif;">{body}</p>
+          </div>
+        ))}
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background-color: #535060; padding: 5rem 2rem;">
+    <div style="max-width: 1320px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 3rem; flex-wrap: wrap;">
+      <h2 style="
+        font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+        font-weight: 300;
+        color: #ffffff;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        margin: 0;
+        max-width: 560px;
+        font-family: 'Calibri Light', Calibri, Arial, sans-serif;
+      ">
+        Ready to experience regulated digital asset banking?
+      </h2>
+      <a href="/#contact" class="btn-coral" style="flex-shrink: 0; padding: 0.75rem 2rem; font-size: 0.84rem;">
+        Become a client →
+      </a>
+    </div>
+  </section>
+
+</Layout>
